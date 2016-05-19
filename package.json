@@ -1,0 +1,19 @@
+{
+  "name": "Database-interactions-and-UI",
+  "version": "1.0.0",
+  "description": "Simple database example",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William McCumstie",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.2",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "request": "^2.69.0",
+    "mysql": "^2.10.2"
+  }
+}
