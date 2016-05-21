@@ -1,0 +1,5 @@
+Installing Node Required Node Modules
+    npm install package.json correctly PASS
+
+Setup express, handlebars on a port
+    Open a blank webpage on port 4004
