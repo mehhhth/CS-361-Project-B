@@ -8,12 +8,29 @@ app.use(express.static('public'));
 // Sets up the engines
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 4003);
+app.set('port', 4004);
 
 // Sets up the body parser
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Connects MySQL
+var mysql = require('mysql');
+var pool = mysql.createPool({
+    connectionLimit : 10,
+    host : 'localhost',
+    user : 'student',
+    password: 'default',
+    database: 'student'
+});
+
+// Checks connection to database
+pool.query("SELECT * FROM shelter", function(err){
+  console.log("Errors in connecting to shelter: " + err);
+});
+
+
 
 // Error page not found
 app.use(function(req,res){

@@ -2,4 +2,23 @@ Installing Node Required Node Modules
     npm install package.json correctly PASS
 
 Setup express, handlebars on a port
-    Open a blank webpage on port 4004
+    Open a blank webpage on port 4004 PASSED
+        Issues with wrong port FIXED
+
+Error 404/500 Page
+    Displays the Error 404 page with incorrect address PASSED
+
+Connect and create the MySQL Database to Server
+    A basic table exists PASSED
+
+Create the Address table
+    NO MySQL ERRORs - PASSED
+    SHOW COLUNM returns all required fields - PASSED
+
+Create the Shelter table
+    NO MySQL ERRORs - PASSED
+    SHOW COLUNM returns all required fields - PASSED
+
+CHECK Main webpage can link to the database
+    PASSED
+
