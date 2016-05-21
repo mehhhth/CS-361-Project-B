@@ -30,7 +30,17 @@ pool.query("SELECT * FROM shelter", function(err){
   console.log("Errors in connecting to shelter: " + err);
 });
 
+// Create user website
+app.get("/user-page", function(err, req, res){
+  res.status(200);
+  res.render('user-page');
+});
 
+// Create provider website
+app.get("/provider-page", function(err, req, res){
+  res.status(200);
+  res.render('provider-page');
+});
 
 // Error page not found
 app.use(function(req,res){

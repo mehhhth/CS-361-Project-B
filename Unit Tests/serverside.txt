@@ -22,3 +22,8 @@ Create the Shelter table
 CHECK Main webpage can link to the database
     PASSED
 
+Create the user page dumby site
+    Site displays correctly PASSED
+
+Create the provider page dumby site
+    Site displays correctly PASSED
