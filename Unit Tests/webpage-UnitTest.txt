@@ -1,0 +1,24 @@
+Installing BootStrap
+
+    npm install bootstrap PASS
+    npm install boostrap on server -
+    download bootstrap repository and transfer files to current working directory - PASS
+    
+Creating Web Pages
+    create home page - PASS
+    create user page for beds -
+    create provider page for beds -
+    
+Testing Web Pages
+    Put all web pages on a server and make sure they load correctly -
+    
+User-Page specific
+    Make sure dropdown menu works correctly - 
+    Be able to add new items to the list dynamically -
+    Add new items to the list through GET request
+    
+Provider-Page Specific
+    Make sure the form submits correctly -
+    Make successful POST requests with the form -
+    Successfully update the database -
+    
