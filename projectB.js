@@ -5,6 +5,7 @@ var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var request = require('request');
 app.use(express.static('public'));
 
+
 // Sets up the engines
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -33,7 +34,8 @@ pool.query("SELECT * FROM shelter", function(err){
 // Create user website
 app.get("/user-page", function(req, res){
   res.status(200);
-  res.render('user-page');
+  //res.render('user-page');
+  res.sendFile(__dirname + "/views/user.html")
 });
 
 // Create provider website

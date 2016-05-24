@@ -14,6 +14,8 @@
     "express-handlebars": "^2.0.1",
     "express-session": "^1.11.3",
     "request": "^2.69.0",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.6"
   }
 }
