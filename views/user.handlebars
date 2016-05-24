@@ -1,0 +1,64 @@
+<link href="justified-nav.css" rel="stylesheet">
+<div class="container">
+
+  <!-- The justified navigation menu is meant for single line per list item.
+       Multiple lines will require custom code not provided by Bootstrap. -->
+  <div class="masthead">
+    <h3 class="text-muted"></h3>
+    <nav>
+      <ul class="nav nav-justified">
+        <li class="active"><a href="#">Check Beds</a></li>
+        <li><a href="#">Find a Shower Truck</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Find Nearest Facility</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Example row of columns -->
+        </br> </br> </br> </br> </br>
+    <div class="text">
+      <h2><b>CHECK BED AVAILABILITY</b></h2>
+      </br>
+      <p>Select a location from the drop down menu, and see the number of available beds: </p>
+      </br>
+      </br>
+    </div>
+
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+
+
+</div>
+
+<script>
+        /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+</script>

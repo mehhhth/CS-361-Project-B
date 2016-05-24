@@ -35,13 +35,19 @@ pool.query("SELECT * FROM shelter", function(err){
 app.get("/user-page", function(req, res){
   res.status(200);
   //res.render('user-page');
-  res.sendFile(__dirname + "/views/user.html")
+  res.render('user');
 });
 
 // Create provider website
 app.get("/provider-page", function(req, res){
   res.status(200);
-  res.render('provider-page');
+  res.render('provider');
+});
+
+// Create provider website
+app.get("/cover", function(req, res){
+  res.status(200);
+  res.render('cover');
 });
 
 // Error page not found

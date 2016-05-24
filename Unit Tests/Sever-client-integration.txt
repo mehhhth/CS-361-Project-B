@@ -1,1 +1,6 @@
-Sever renders the bootstrap html
+Server renders the client bootstrap html PASSED
+    Had to convert html files into handlebars format
+    Correctly laying the file directories
+
+Server renders all other pages
+    Same changes as above
