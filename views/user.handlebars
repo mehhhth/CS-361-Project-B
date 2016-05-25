@@ -17,8 +17,27 @@
     </nav>
   </div>
 
+<table>
+<tr>
+<td>name</td>
+<td>total</td>
+<td>available</td>
 
-  <!-- Example row of columns -->
+</tr>
+
+  {{#results}}
+<tr>
+<td>{{name}}</td>
+<td>{{bed_total}}</td>
+<td>{{available}}</td>
+</tr>  
+  {{/results}}
+  
+  
+  
+  
+  
+  <!-- Example row of columns 
         </br> </br> </br> </br> </br>
     <div class="text">
       <h2><b>CHECK BED AVAILABILITY</b></h2>
@@ -37,7 +56,7 @@
       </div>
     </div>
 
-
+-->
 </div>
 
 <script>
