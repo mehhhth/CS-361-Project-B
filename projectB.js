@@ -44,6 +44,16 @@ app.get("/provider-page", function(req, res){
   res.render('provider');
 });
 
+// Adds providers to the database
+app.post("/add-provider", function(req, res){
+  body = req.body;
+  pool.query("INSERT INTO shelter (name, bed_total, available) VALUES (?, ?, ?)",
+    [body.name, body.bedT, body.bedA]);
+  pool.query("SELECT * FROM shelter WHERE name = ?", [body.name], function(err, rows, fields) {
+    console.log(rows);
+  });
+});
+
 // Create provider website
 app.get("/cover", function(req, res){
   res.status(200);
