@@ -1,7 +1,5 @@
-
 <link href="provider.css" rel="stylesheet">
 <div class="container">
-
   <!-- The justified navigation menu is meant for single line per list item.
        Multiple lines will require custom code not provided by Bootstrap. -->
   <div class="masthead">
@@ -17,32 +15,47 @@
       </ul>
     </nav>
   </div>
-
-
-  <!-- Example row of columns -->
-        </br> </br> </br> </br> </br>
-    <div class="text">
-      <h2><b>UPDATE PROVIDER INFO</b></h2>
-      </br>
+  
+  </br>
+  <div class="text">
+    <h2><b>FACILITY INFO</b></h2> </br>
+      <label>Create</label>
+      <input type="radio" name="yesno" id="yesCheck"/>
+      <label>Update</label>
+      <input type="radio" name="yesno" id="noCheck"/> </br>
       <p>Use the below form to enter information about your facility/service: </p>
-      </br>
-      </br>
-    </div>
+  </div>
 
-    <form class="form-signin">
-        <h3>Total Number of Beds</h3>
-        <label for="totalBed" class="sr-only">Email address</label>
-        <input type="number" id="totalBed" class="form-control" placeholder="Total Number of Beds" required autofocus>
-        </br>
-        <h3> Available Number of Beds </h3>
-        <label for="availableBeds" class="sr-only">Available Beds</label>
-        <input type="number" id="availableBeds" class="form-control" placeholder="Available Beds" required>
-        </br> </br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="loadDoc()">Submit</button>
-      </form>
-      
-      </br>
-      </br>
+  <form method = "post" id="ifYes" style="display:none;" class="form-signin">
+    <h2>Create Facility</h2>
+    <h3>Sleeping Facility Name</h3>
+    <input type="string" id="createName" class="form-control" placeholder="Facility Name" required autofocus>
+    </br>
+    <h3> Total Number of Beds </h3>
+    <input type="number" id="createBedT" class="form-control" placeholder="Available Beds" required>
+    </br>
+    <h3> Available Number of Beds </h3>
+    <input type="number" id="createBedA" class="form-control" placeholder="Available Beds" required>
+    </br>
+    <button type="submit" id="submitCreate">Submit</button>
+  </form>
 
+  <form method = "post" id="ifNo" style="display:none;" class="form-signin">
+    <h2>Update Facility</h2>
+    <h3>Sleeping Facility ID</h3>
+    <input type="number" id="facilityID" class="form-control" placeholder="Facility ID" required autofocus>
+    </br>
+    <h3> Total Number of Beds </h3>
+    <label for="totalBeds" class="sr-only">Total Available Beds</label>
+    <input type="number" id="totalBeds" class="form-control" placeholder="Available Beds" required>
+    </br> </br>
+    <h3> Available Number of Beds </h3>
+    <label for="availableBeds" class="sr-only">Beds Currently Available</label>
+    <input type="number" id="availableBeds" class="form-control" placeholder="Available Beds" required>
+    </br> </br>
+    <button type="submit" id="submitUpdate">Submit</button>
+  </form>
 
-</div> <!-- /container -->
+  </br> </br>
+</div>
+<script type="text/javascript" src="provider.js"></script>
