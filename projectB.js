@@ -30,12 +30,31 @@ var pool = mysql.createPool({
 pool.query("SELECT * FROM shelter", function(err){
   console.log("Errors in connecting to shelter: " + err);
 });
-
+app.get("/getdata", function(req, res, next){
+  var context = {};
+  pool.query('SELECT * FROM shelter', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = rows;
+	res.send(JSON.stringify( rows));
+  });
+});
 // Create user website
 app.get("/user-page", function(req, res){
-  res.status(200);
-  //res.render('user-page');
-  res.render('user');
+  var context = {};
+  pool.query('SELECT * FROM shelter', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = rows;
+	  res.status(200);
+	  //res.render('user-page');
+	  res.render('user',context);
+  });	
+
 });
 
 // Create provider website
