@@ -13,9 +13,13 @@ Testing Web Pages
     Put all web pages on a server and make sure they load correctly -
     
 User-Page specific
-    Make sure dropdown menu works correctly - 
-    Be able to add new items to the list dynamically -
-    Add new items to the list through GET request
+    Make sure the services shown in the list -
+    Make successful POST requests from the database -
+    Make sure the list is up to date -
+    Make sure the list sorted by distance correctly -
+    Make sure the list sorted by available beds correctly -
+    Make sure the user able to order the bed -
+	
     
 Provider-Page Specific
     Make sure the form submits correctly -
