@@ -4,3 +4,13 @@ Server renders the client bootstrap html PASSED
 
 Server renders all other pages
     Same changes as above
+
+Event listeners for switching between update and create on provider page switch the two forms
+    Issues doing this in HTML
+    CHANGED TO: Using event listeners in a js file PASSED
+
+Submit the provider form to the server
+    Server receives and prints the data PASSED
+        ISSUES: Had issues with making the JSON request
+
+Server adds the data to the data base PASSED
