@@ -26,7 +26,7 @@
       <p>Use the below form to enter information about your facility/service: </p>
   </div>
 
-  <form method = "post" id="ifYes" style="display:none;" class="form-signin">
+  <form name="create" method = "post" id="ifYes" style="display:none;" class="form-signin">
     <h2>Create Facility</h2>
     <h3>Sleeping Facility Name</h3>
     <input type="string" id="createName" class="form-control" placeholder="Facility Name" required autofocus>
@@ -39,23 +39,24 @@
     </br>
     <button type="submit" id="submitCreate">Submit</button>
   </form>
-
-  <form method = "post" id="ifNo" style="display:none;" class="form-signin">
+  <form name="update" method = "post" id="ifNo" style="display:none;" class="form-signin">
     <h2>Update Facility</h2>
-    <h3>Sleeping Facility ID</h3>
-    <input type="number" id="facilityID" class="form-control" placeholder="Facility ID" required autofocus>
+    <h3>Sleeping Facility</h3>
+    <select id="updateID">
+      {{#results}}
+      <option value={{id}}>{{name}}</option>
+      {{/results}}
+    </select>
     </br>
     <h3> Total Number of Beds </h3>
-    <label for="totalBeds" class="sr-only">Total Available Beds</label>
-    <input type="number" id="totalBeds" class="form-control" placeholder="Available Beds" required>
-    </br> </br>
+    <input type="number" id="updateBedT" class="form-control" placeholder="Available Beds" required>
+    </br>
     <h3> Available Number of Beds </h3>
-    <label for="availableBeds" class="sr-only">Beds Currently Available</label>
-    <input type="number" id="availableBeds" class="form-control" placeholder="Available Beds" required>
-    </br> </br>
+    <input type="number" id="updateBedA" class="form-control" placeholder="Available Beds" required>
+    </br>
     <button type="submit" id="submitUpdate">Submit</button>
   </form>
-
+  <div id="response_text"></div>
   </br> </br>
 </div>
 <script type="text/javascript" src="provider.js"></script>

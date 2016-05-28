@@ -5,7 +5,6 @@ var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var request = require('request');
 app.use(express.static('public'));
 
-
 // Sets up the engines
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -41,6 +40,7 @@ app.get("/getdata", function(req, res, next){
 	res.send(JSON.stringify( rows));
   });
 });
+
 // Create user website
 app.get("/user-page", function(req, res){
   var context = {};
@@ -54,22 +54,64 @@ app.get("/user-page", function(req, res){
 	  //res.render('user-page');
 	  res.render('user',context);
   });	
-
 });
 
 // Create provider website
 app.get("/provider-page", function(req, res){
-  res.status(200);
-  res.render('provider');
+  var context = {};
+  pool.query('SELECT id, name FROM shelter', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = rows;
+    res.status(200);
+    res.render('provider',context);
+  }); 
 });
 
 // Adds providers to the database
 app.post("/add-provider", function(req, res){
+  // Converts empty strings to null
   body = req.body;
+  if (body.name == "")
+    body.name = null;
+
+  // Adds the value to the database
   pool.query("INSERT INTO shelter (name, bed_total, available) VALUES (?, ?, ?)",
-    [body.name, body.bedT, body.bedA]);
-  pool.query("SELECT * FROM shelter WHERE name = ?", [body.name], function(err, rows, fields) {
-    console.log(rows);
+    [body.name, body.bedT, body.bedA], function(err) {
+      if (err != null)
+        res.send(JSON.stringify({"no_error": "false"}));
+      else
+        res.send(JSON.stringify({"no_error": "true"}));
+    });
+});
+
+// Updates providers to the database
+app.post("/update-provider", function(req, res){
+  body = req.body;
+
+  // Pulls the old data fromt the database
+  pool.query('SELECT * FROM shelter WHERE id=?', [body.ID], function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+    
+    // Prevents Empty Information from overiding the database
+    if (body.bedT == "")
+      body.bedT = rows[0].bed_total;
+    if (body.bedA == "")
+      body.bedA = rows[0].available;
+
+    // Updates the data
+    pool.query("UPDATE shelter SET bed_total=?, available=? WHERE id=?",
+      [body.bedT, body.bedA, body.ID], function(err) {
+        if (err != null)
+          res.send(JSON.stringify({"no_error": "false"}));
+        else
+          res.send(JSON.stringify({"no_error": "true"}));
+      });
   });
 });
 

@@ -43,7 +43,8 @@ pool.query(createString, function(err, rows, fields){
     "bed_total INT, "+
     "available INT, "+
     "time_open TIME, "+
-    "time_close TIME" +
+    "time_close TIME," +
+    "UNIQUE KEY (name)" +
     ");"
     pool.query(createString, function(err, rows, fields){
         // Checks for errors in address
