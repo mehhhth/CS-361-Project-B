@@ -1,0 +1,24 @@
+Add a Button on cover page that redirects to the provider PASSED
+
+Update User page to be more user friendly (add titles + lables etc)
+    Page dissplays correctly PASSED
+
+Quality Assurance (integration test) - Blank Entries not added to database FAILED
+    Insure Names are UNIQUE 
+        Add the UNIQUE KEY condition PASSED
+    Insure NOT NULL condition is applied (name field)
+        Need to convert blank strings "" in the name field to a null value PASSED
+    Notify the provider if the data has been added correctly PASSED
+
+Compelete provider update information page (MULTIPLE TASKS)
+    Drop down menu disaplays list of facilities
+        Pull facility data from database PASSED
+        Displays a drop down menu of facilities in form PASSED
+    Server uses update form to update the database PASSED
+        Form correctly sends data to the server
+            (Similar to create form - copy code as basis)
+            Issue: get the value of the drop down menu
+                Resloved: .selectedIndex returns the selected index PASSED
+    Server correctly UPDATES the database PASSED
+    Server notifies provider page if successful PASSED
+    Leaving blank fields in the UPDATE doesn't delete data PASSED
