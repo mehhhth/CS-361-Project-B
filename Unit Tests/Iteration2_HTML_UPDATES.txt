@@ -22,3 +22,6 @@ Compelete provider update information page (MULTIPLE TASKS)
     Server correctly UPDATES the database PASSED
     Server notifies provider page if successful PASSED
     Leaving blank fields in the UPDATE doesn't delete data PASSED
+
+Add Address
+	Display address input on the provider page's create form
